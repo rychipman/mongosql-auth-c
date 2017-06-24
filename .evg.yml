@@ -310,15 +310,15 @@ axes:
     run_on: windows-64-vs2015-compile
     variables:
       variant: windows-vs2015
-
-- id: os-disabled
-  display_name: Disabled OSes
-  values:
   - id: windows-vs2013
     display_name: Windows 64 (VS2013)
     run_on: windows-64-vs2013-compile
     variables:
       variant: windows-vs2013
+
+- id: os-disabled
+  display_name: Disabled OSes
+  values:
   - id: debian71
     display_name: Debian 7.1
     run_on: debian71-test
