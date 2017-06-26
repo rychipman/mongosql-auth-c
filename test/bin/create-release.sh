@@ -28,7 +28,7 @@
 
     else
 
-        #python testdata/bin/make_archive.py -o $ARTIFACTS_DIR/release.tgz --format tgz --transform $build_dir/mongosqld=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/bin/mongosqld --transform $build_dir/mongodrdl=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/bin/mongodrdl --transform distsrc/README=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/README --transform distsrc/THIRD-PARTY-NOTICES=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/THIRD-PARTY-NOTICES --transform LICENSE=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/LICENSE LICENSE distsrc/README distsrc/THIRD-PARTY-NOTICES $build_dir/mongosqld $build_dir/mongodrdl
+        python testdata/bin/make_archive.py -o $ARTIFACTS_DIR/release.tgz --format tgz --transform $build_dir/mongosqld=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/bin/mongosqld --transform $build_dir/mongodrdl=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/bin/mongodrdl --transform distsrc/README=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/README --transform distsrc/THIRD-PARTY-NOTICES=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/THIRD-PARTY-NOTICES --transform LICENSE=mongodb-bi-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION/LICENSE LICENSE distsrc/README distsrc/THIRD-PARTY-NOTICES $build_dir/mongosqld $build_dir/mongodrdl
 
     fi
 
