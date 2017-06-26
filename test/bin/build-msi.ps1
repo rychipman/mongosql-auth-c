@@ -22,7 +22,7 @@ $sourceDir = pwd
 $resourceDir = "$sourceDir\installers\msi\mongosql-auth\"
 $artifactsDir = "$sourceDir\test\artifacts\"
 $objDir = "$artifactsDir\out\"
-$binDir = "$artifactsDir\out\"
+$libDir = "$artifactsDir\out\"
 
 if (-not ($VersionLabel -match "(\d\.\d).*")) {
     throw "invalid version specified: $VersionLabel"
@@ -41,7 +41,7 @@ $upgradeCode = "3f021824-c333-49f5-9cbf-d6de9b6adacc"
     -dSourceDir="$sourceDir" `
     -dResourceDir="$resourceDir" `
     -dSslDir="$binDir" `
-    -dBinaryDir="$binDir" `
+    -dLibraryDir="$libDir" `
     -dTargetDir="$objDir" `
     -dTargetExt=".msi" `
     -dTargetFileName="release" `
@@ -67,6 +67,6 @@ if(-not $?) {
     -ext "$wixUiExt" `
     $objDir\Product.wixobj `
     $objDir\FeatureFragment.wixobj `
-    $objDir\BinaryFragment.wixobj `
+    $objDir\LibraryFragment.wixobj `
     $objDir\LicensingFragment.wixobj `
     $objDir\UIFragment.wixobj

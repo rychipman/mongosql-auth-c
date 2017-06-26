@@ -5,7 +5,7 @@
       <Component Id="c_mongosql_auth" Guid="c5a7610d-615a-4529-832e-26ce73606b5f">
         <File Id="f_mongosql_auth"
               Name="mongosql_auth.dll"
-              Source="$(var.BinaryDir)\mongosqld"
+              Source="$(var.LibraryDir)\mongosql_auth.dll"
               DiskId ="1"
               KeyPath="yes"/>
       </Component>
