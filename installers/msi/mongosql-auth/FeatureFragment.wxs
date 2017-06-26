@@ -9,7 +9,7 @@
                ConfigurableDirectory="INSTALLLOCATION">
         <Feature Id="Plugin"
                 Title="$(var.ProjectName)"
-                Description="$(var.ProjectName) - MySQL plugin library (mongosql_auth.dll)"
+                Description="MySQL plugin library for mongosql_auth protocol (mongosql_auth.dll)"
                 Level="1">
           <ComponentRef Id="c_mongosql_auth" />
         </Feature>
