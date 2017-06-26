@@ -20,7 +20,7 @@ Param(
 $wixUiExt = "$WixPath\WixUIExtension.dll"
 $sourceDir = pwd
 $resourceDir = "$sourceDir\installers\msi\mongosql-auth\"
-$artifactsDir = "$sourceDir\testdata\artifacts\"
+$artifactsDir = "$sourceDir\test\artifacts\"
 $objDir = "$artifactsDir\out\"
 $binDir = "$artifactsDir\out\"
 
