@@ -12,7 +12,7 @@
       <Component Id="c_Thirdparty" Guid="83b6dfe5-cd98-43ed-91e3-648bcff9ed9d">
         <File Id="f_Thirdparty"
               Name="THIRD-PARTY-NOTICES"
-              Source="$(var.SourceDir)\THIRD-PARTY-NOTICES"
+              Source="$(var.SourceDir)\THIRD_PARTY_NOTICES"
               DiskId ="1"
               KeyPath="yes" />
       </Component>
