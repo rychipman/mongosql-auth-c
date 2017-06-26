@@ -52,7 +52,7 @@ $upgradeCode = "3f021824-c333-49f5-9cbf-d6de9b6adacc"
     -ext "$wixUiExt" `
     "$resourceDir\Product.wxs" `
     "$resourceDir\FeatureFragment.wxs" `
-    "$resourceDir\BinaryFragment.wxs" `
+    "$resourceDir\LibraryFragment.wxs" `
     "$resourceDir\LicensingFragment.wxs" `
     "$resourceDir\UIFragment.wxs"
 
