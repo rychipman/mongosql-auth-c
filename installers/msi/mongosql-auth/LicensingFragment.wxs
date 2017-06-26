@@ -2,24 +2,24 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Fragment>
     <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="c_License" Guid="30eaf4aa-4fe1-4d19-96c9-69c061da6e8c">
+      <Component Id="c_License" Guid="a7e36faa-c54b-44cd-9686-6094ce141d7c">
         <File Id="f_License"
               Name="LICENSE.txt"
               Source="$(var.SourceDir)\LICENSE"
               DiskId ="1"
               KeyPath="yes" />
       </Component>
-      <Component Id="c_Thirdparty" Guid="4e08bb54-a96b-40b4-9cc0-082351b8da4b">
+      <Component Id="c_Thirdparty" Guid="83b6dfe5-cd98-43ed-91e3-648bcff9ed9d">
         <File Id="f_Thirdparty"
               Name="THIRD-PARTY-NOTICES"
-              Source="$(var.SourceDir)\distsrc\THIRD-PARTY-NOTICES"
+              Source="$(var.SourceDir)\THIRD-PARTY-NOTICES"
               DiskId ="1"
               KeyPath="yes" />
       </Component>
-      <Component Id="c_Readme" Guid="f40564ba-a569-4567-895b-f720b816638b">
+      <Component Id="c_Readme" Guid="7fbbfbf0-11c1-4ba1-b573-46921927db32">
         <File Id="f_Readme"
               Name="README"
-              Source="$(var.SourceDir)\distsrc\README"
+              Source="$(var.SourceDir)\README.md"
               DiskId ="1"
               KeyPath="yes" />
       </Component>
