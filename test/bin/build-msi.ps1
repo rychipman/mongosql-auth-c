@@ -6,7 +6,7 @@
 .PARAMETER ProjectName
     The name to use when referring to the project.
 .PARAMETER VersionLabel
-    The label to use when referring to this version of the 
+    The label to use when referring to this version of the
     project.
 .PARAMETER WixPath
     The path to the WIX binaries.
@@ -19,28 +19,17 @@ Param(
 
 $wixUiExt = "$WixPath\WixUIExtension.dll"
 $sourceDir = pwd
-$resourceDir = "$sourceDir\installers\msi\mongosql\"
+$resourceDir = "$sourceDir\installers\msi\mongosql-auth\"
 $artifactsDir = "$sourceDir\testdata\artifacts\"
 $objDir = "$artifactsDir\out\"
-$binDir = "$artifactsDir\build\"
+$binDir = "$artifactsDir\out\"
 
 if (-not ($VersionLabel -match "(\d\.\d).*")) {
     throw "invalid version specified: $VersionLabel"
 }
 $version = $matches[1]
 
-# upgrade code needs to change everytime we
-# rev the minor version (2.2 -> 2.3). That way, we
-# will allow multiple minor versions to be installed 
-# side-by-side.
-if ([double]$version -gt 2.2) {
-    throw "You must change the upgrade code for a minor revision. 
-Once that is done, change the version number above to
-account for the next revision that will require being
-upgradeable."
-}
-
-$upgradeCode = "6a5dffca-671a-4553-a18b-b1cb8d6f9e16"
+$upgradeCode = "3f021824-c333-49f5-9cbf-d6de9b6adacc"
 
 # compile wxs into .wixobjs
 & $WixPath\candle.exe -wx `
