@@ -346,11 +346,6 @@ axes:
     run_on: macos-1012
     variables:
       variant: osx
-  - id: windows-vs2015
-    display_name: Windows 64 (VS2015)
-    run_on: windows-64-vs2015-compile
-    variables:
-      variant: windows-vs2015
   - id: windows-vs2013
     display_name: Windows 64 (VS2013)
     run_on: windows-64-vs2013-compile

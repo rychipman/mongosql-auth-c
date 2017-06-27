@@ -20,13 +20,6 @@ osx)
     PUSH_ARCH='x86_64'
     PUSH_NAME='osx'
     ;;
-windows-vs2015)
-    export SQLPROXY_BUILD_VARIANT='full_matrix__os_full_matrix~windows_mongodb_version~latest_mongodb_topology~standalone'
-    CMAKE_PATH="/cygdrive/c/cmake/bin"
-    MSBUILD_PATH="/cygdrive/c/Program Files (x86)/MSBuild/14.0/Bin"
-    PUSH_ARCH='x86_64'
-    PUSH_NAME='win32'
-    ;;
 windows-vs2013)
     export SQLPROXY_BUILD_VARIANT='full_matrix__os_full_matrix~windows_mongodb_version~latest_mongodb_topology~standalone'
     CMAKE_PATH="/cygdrive/c/cmake/bin"
