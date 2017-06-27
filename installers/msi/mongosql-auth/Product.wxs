@@ -16,10 +16,10 @@
 
         <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="ProgramFiles64Folder">
-                <Directory Id="MongoDB" Name="MongoDB">
-                    <Directory Id="Project" Name="$(var.ProjectName)">
-                        <Directory Id="INSTALLLOCATION" Name="!(wix.InstallFolder)">
-                            <Directory Id="LIB" Name="lib" />
+                <Directory Id="MySQL" Name="MySQL">
+                    <Directory Id="MYSQLHOMEDIR" Name="MySQL Server 5.7">
+                        <Directory Id="lib" Name="lib">
+                            <Directory Id="MYSQLPLUGINDIR" Name="plugin" />
                         </Directory>
                     </Directory>
                 </Directory>
