@@ -56,8 +56,11 @@
 
     echo "building mongosql_auth..."
     eval $BUILD
-    mv $PLUGIN_LIBRARY $ARTIFACTS_DIR/out
     echo "done building mongosql_auth"
+
+    echo "copying plugin to build dir..."
+    cp $PLUGIN_LIBRARY $ARTIFACTS_DIR/build
+    echo "copied plugin to build dir"
 
 ) > $LOG_FILE 2>&1
 
