@@ -21,8 +21,8 @@ $wixUiExt = "$WixPath\WixUIExtension.dll"
 $sourceDir = pwd
 $resourceDir = "$sourceDir\installers\msi\mongosql-auth\"
 $artifactsDir = "$sourceDir\test\artifacts\"
-$objDir = "$artifactsDir\out\"
-$libDir = "$artifactsDir\out\"
+$objDir = "$artifactsDir\build\"
+$libDir = "$artifactsDir\build\"
 
 if (-not ($VersionLabel -match "(\d\.\d).*")) {
     throw "invalid version specified: $VersionLabel"
