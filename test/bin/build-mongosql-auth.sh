@@ -51,7 +51,11 @@
     cd bld
 
     echo "running cmake..."
-    cmake .. $CMAKE_ARGS
+    if [ -n "$CMAKE_GENERATOR" ]; then
+        cmake .. $CMAKE_ARGS -G "$CMAKE_GENERATOR"
+    else
+        cmake .. $CMAKE_ARGS
+    fi
     echo "done running cmake"
 
     echo "building mongosql_auth..."

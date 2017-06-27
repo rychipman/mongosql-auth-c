@@ -58,10 +58,6 @@ else
     fi
 fi
 
-if [ "$CMAKE_GENERATOR" != "" ]; then
-    CMAKE_ARGS="$CMAKE_ARGS -G \$CMAKE_GENERATOR"
-fi
-
 print_exit_msg() {
     exit_code=$?
     if [ "$exit_code" != "0" ]; then
