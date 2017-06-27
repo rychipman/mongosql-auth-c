@@ -31,6 +31,6 @@
       <ComponentRef Id="c_License"/>
     </ComponentGroup>
 
-    <WixVariable Id="WixUILicenseRtf" Value="$(var.SourceDir)\LICENSE" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ResourceDir)\LICENSE.rtf" />
   </Fragment>
 </Wix>
