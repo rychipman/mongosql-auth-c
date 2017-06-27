@@ -15,7 +15,6 @@ pre:
   - func: "reset testing state"
 
 post:
-  - func: "generate reports"
   - func: "upload artifacts"
   - command: shell.cleanup
 
@@ -113,13 +112,6 @@ functions:
       type: test
       params:
         directory: mongosql-auth-c
-
-  "generate reports":
-    command: shell.exec
-    params:
-      script: |
-        ${PREPARE_SHELL}
-        ${SCRIPT_DIR}/generate-reports.sh
 
   "install dependencies":
     command: shell.exec
