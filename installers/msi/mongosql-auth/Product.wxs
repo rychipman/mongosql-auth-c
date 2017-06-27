@@ -14,23 +14,18 @@
         <WixVariable Id="InstallFolder" Value="$(var.Version)" />
         <WixVariable Id="ProductName" Value="$(var.ProjectName) $(var.VersionLabel)" />
 
-        <Directory Id="MYSQLTARGETDIR" Name="SourceDir">
+        <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="ProgramFiles64Folder">
+                <Directory Id="MongoDB" Name="MongoDB">
+                    <Directory Id="BIConnector" Name="Connector for BI">
+                        <Directory Id="AUTHPLUGINDIR" Name="MongoSQL Auth Plugin" />
+                    </Directory>
+                </Directory>
                 <Directory Id="MySQL" Name="MySQL">
                     <Directory Id="MYSQLHOMEDIR" Name="MySQL Server 5.7">
                         <Directory Id="lib" Name="lib">
                             <Directory Id="MYSQLPLUGINDIR" Name="plugin" />
                         </Directory>
-                    </Directory>
-                </Directory>
-            </Directory>
-        </Directory>
-
-        <Directory Id="PLUGINTARGETDIR" Name="SourceDir">
-            <Directory Id="ProgramFiles64Folder">
-                <Directory Id="MongoDB" Name="MongoDB">
-                    <Directory Id="BIConnector" Name="Connector for BI">
-                        <Directory Id="AUTHPLUGINDIR" Name="MongoSQL Auth Plugin" />
                     </Directory>
                 </Directory>
             </Directory>
