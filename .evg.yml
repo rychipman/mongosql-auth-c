@@ -20,13 +20,14 @@ post:
 
 tasks:
 
-- name: build
+- name: dist
   exec_timeout_secs: 14400 # 4h
   commands:
     - func: "install dependencies"
     - func: "build mongosql_auth"
       vars:
         release: true
+    - func: "create release"
 
 - name: unit_tests
   exec_timeout_secs: 14400 # 4h
@@ -64,6 +65,14 @@ functions:
           ${PREPARE_SHELL}
           export RELEASE='${release}'
           ${SCRIPT_DIR}/build-mongosql-auth.sh
+
+  "create release":
+    command: shell.exec
+    type: test
+    params:
+      script: |
+          ${PREPARE_SHELL}
+          ${SCRIPT_DIR}/create-release.sh
 
   "export variables":
     - command: shell.exec
@@ -296,6 +305,16 @@ functions:
         bucket: mciuploads
         permissions: public-read
         display_name: "run-integration-tests-scram.log"
+    - command: s3.put
+      params:
+        aws_key: ${aws_key}
+        aws_secret: ${aws_secret}
+        local_file: mongosql-auth-c/test/artifacts/log/create-release.log
+        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/create-release.log
+        content_type: text/plain
+        bucket: mciuploads
+        permissions: public-read
+        display_name: "create-release.log"
 
 axes:
 
