@@ -26,12 +26,22 @@
             </Directory>
         </Directory>
 
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFiles64Folder">
+                <Directory Id="MongoDB" Name="MongoDB">
+                    <Directory Id="Connector for BI" Name="Connector for BI">
+                        <Directory Id="AUTHPLUGINDIR" Name="MongoSQL Auth Plugin" />
+                    </Directory>
+                </Directory>
+            </Directory>
+        </Directory>
+
         <FeatureGroupRef Id="fg_All" />
 
         <Property Id="ARPPRODUCTICON" Value="MongoDBIcon" />
         <Property Id="ARPHELPLINK" Value="http://www.mongodb.com/" />
         <Property Id="ARPURLINFOABOUT" Value="http://www.mongodb.com/" />
-        <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+        <Property Id="WIXUI_INSTALLDIR" Value="AUTHPLUGINDIR" />
 
         <UIRef Id="MongoWixUI" />
 

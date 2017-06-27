@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Fragment>
-    <DirectoryRef Id="INSTALLLOCATION">
+    <DirectoryRef Id="AUTHPLUGINDIR">
       <Component Id="c_License" Guid="a7e36faa-c54b-44cd-9686-6094ce141d7c">
         <File Id="f_License"
               Name="LICENSE.txt"
