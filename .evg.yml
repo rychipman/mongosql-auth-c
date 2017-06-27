@@ -199,6 +199,16 @@ functions:
       params:
         aws_key: ${aws_key}
         aws_secret: ${aws_secret}
+        local_file: mongosql-auth-c/test/artifacts/release.zip
+        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth.zip
+        content_type: application/octet-stream
+        bucket: mciuploads
+        permissions: public-read
+        display_name: "mongosql-auth.zip"
+    - command: s3.put
+      params:
+        aws_key: ${aws_key}
+        aws_secret: ${aws_secret}
         local_file: mongosql-auth-c/test/artifacts/release.msi
         remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth.msi
         content_type: application/octet-stream
