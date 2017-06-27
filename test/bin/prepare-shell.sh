@@ -26,6 +26,10 @@ if [ "Linux" = "$platform" ]; then
     CMAKE_ARGS="$CMAKE_ARGS -DWITH_SSL=system"
 fi
 
+if [ "$CMAKE_GENERATOR" != "" ]; then
+    CMAKE_ARGS="$CMAKE_ARGS -G '$CMAKE_GENERATOR'"
+fi
+
 if [ "Windows_NT" = "$OS" ]; then
     bison_path="/cygdrive/c/bison/bin"
     export PATH="$PATH:$bison_path"
