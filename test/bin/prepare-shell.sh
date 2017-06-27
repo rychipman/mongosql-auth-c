@@ -26,10 +26,6 @@ if [ "Linux" = "$platform" ]; then
     CMAKE_ARGS="$CMAKE_ARGS -DWITH_SSL=system"
 fi
 
-if [ "$CMAKE_GENERATOR" != "" ]; then
-    CMAKE_ARGS="$CMAKE_ARGS -G '$CMAKE_GENERATOR'"
-fi
-
 if [ "Windows_NT" = "$OS" ]; then
     bison_path="/cygdrive/c/bison/bin"
     export PATH="$PATH:$bison_path"
@@ -60,6 +56,10 @@ else
     else
         CMAKE_ARGS="$CMAKE_ARGS -DBUILD_CONFIG=mysql_release -DIGNORE_AIO_CHECK=1"
     fi
+fi
+
+if [ "$CMAKE_GENERATOR" != "" ]; then
+    CMAKE_ARGS="$CMAKE_ARGS -G \$CMAKE_GENERATOR"
 fi
 
 print_exit_msg() {
