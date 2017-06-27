@@ -14,10 +14,10 @@
           <ComponentRef Id="c_mongosql_auth" />
         </Feature>
         <Feature Id="Config"
-                Title=""
-                Description=""
+                Title="MySQL Configuration"
+                Description="MySQL configuration file to make mongosql_auth the default MySQL auth plugin"
                 Level="1">
-          <ComponentRef ID="c_mysql_config" />
+          <ComponentRef Id="c_mysql_config" />
         </Feature>
         <ComponentGroupRef Id="cg_License" />
       </Feature>
