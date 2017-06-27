@@ -29,7 +29,7 @@
         <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="ProgramFiles64Folder">
                 <Directory Id="MongoDB" Name="MongoDB">
-                    <Directory Id="Connector for BI" Name="Connector for BI">
+                    <Directory Id="BIConnector" Name="Connector for BI">
                         <Directory Id="AUTHPLUGINDIR" Name="MongoSQL Auth Plugin" />
                     </Directory>
                 </Directory>
