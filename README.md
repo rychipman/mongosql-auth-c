@@ -8,13 +8,14 @@ Version 1.0 of this plugin supports the following mechanisms:
 
 ## Supported Platforms
 
-The plugin is built and tested on the following platorms:
+The plugin is built and tested on the following platforms (all x86\_64):
 
 - Windows (VS2013)
 - OSX 10.12
 - Ubuntu 14.04
+- RHEL 7.0
 
-The plugin is built and tested against MySQL 5.7.18 Community Edition.
+The plugin is built and tested against MySQL 5.7.18 Community Edition (64-bit).
 
 ## Installation
 
@@ -33,6 +34,8 @@ The default location of `<mysql home>` varies by platform, but the location of t
 Alternatively, the plugin can be installed in a directory of your choice if you provide the `plugin-dir=<your_install_dir>` option to your MySQL client.
 
 ## Usage
+
+This plugin can be used with the 64-bit version of the the MySQL shell and the MySQL ODBC driver.
 
 ### Parameters
 
