@@ -2,34 +2,39 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Fragment>
     <FeatureGroup Id="fg_All">
+      <Feature Id="MongoSQLAuth"
+               Title="MongoSQL Auth"
+               Description="A MySQL client authentication plugin for use with the MongoDB Connector for BI"
+               Level="1">
 
-      <Feature Id="Documentation"
-               Title="MongoSQL Auth Plugin Documentation"
-               Description="README, LICENSE, and THIRD-PARTY-NOTICES for the MongoSQL Auth Plugin"
-               Level="1"
-               ConfigurableDirectory="AUTHPLUGINDIR">
-        <ComponentGroupRef Id="cg_License" />
-      </Feature>
-
-      <Feature Id="Plugin"
-              Title="MongoSQL Auth Plugin"
-              Description="MongoSQL Auth Plugin"
-              Level="1"
-              ConfigurableDirectory="MYSQLHOMEDIR">
-        <Feature Id="Library"
-                Title="$(var.ProjectName)"
-                Description="MySQL plugin library for mongosql_auth protocol (mongosql_auth.dll)"
-                Level="1">
-          <ComponentRef Id="c_mongosql_auth" />
+        <Feature Id="Documentation"
+                 Title="Documentation"
+                 Description="README, LICENSE, and THIRD-PARTY-NOTICES for the MongoSQL Auth Plugin"
+                 Level="1"
+                 ConfigurableDirectory="AUTHPLUGINDIR">
+          <ComponentGroupRef Id="cg_License" />
         </Feature>
-        <Feature Id="Config"
-                Title="MySQL Configuration"
-                Description="MySQL configuration file to make mongosql_auth the default MySQL auth plugin"
-                Level="1">
-          <ComponentRef Id="c_mysql_config" />
-        </Feature>
-      </Feature>
 
+        <Feature Id="Plugin"
+                Title="Plugin Files"
+                Description="MongoSQL Auth Plugin"
+                Level="1"
+                ConfigurableDirectory="MYSQLHOMEDIR">
+          <Feature Id="Library"
+                  Title="Plugin Library"
+                  Description="MySQL plugin library for mongosql_auth protocol (mongosql_auth.dll)"
+                  Level="1">
+            <ComponentRef Id="c_mongosql_auth" />
+          </Feature>
+          <Feature Id="Config"
+                  Title="MySQL Configuration"
+                  Description="MySQL configuration file to make mongosql_auth the default MySQL auth plugin"
+                  Level="1">
+            <ComponentRef Id="c_mysql_config" />
+          </Feature>
+        </Feature>
+
+      </Feature>
     </FeatureGroup>
   </Fragment>
 </Wix>
