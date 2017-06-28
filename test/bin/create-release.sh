@@ -9,7 +9,7 @@
     cd $PROJECT_DIR
 
     build_dir="$ARTIFACTS_DIR/build"
-    release_dir="mongosql-auth-$PUSH_NAME-$PUSH_ARCH-$CURRENT_VERSION"
+    release_dir="mongosql-auth-$PUSH_NAME-$PUSH_ARCH"
 
     if [ "Windows_NT" = "$OS" ]; then
 
