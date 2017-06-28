@@ -32,6 +32,12 @@
 
         <FeatureGroupRef Id="fg_All" />
 
+        <!-- UI related -->
+        <WixVariable Id="WixUIDialogBmp" Value="$(var.ResourceDir)\Dialog.bmp" />
+        <WixVariable Id="WixUIBannerBmp" Value="$(var.ResourceDir)\Banner.bmp" />
+        <WixVariable Id="WixUIInfoIco" Value="$(var.ResourceDir)\Installer_Icon_32x32.ico" />
+        <WixVariable Id="WixUIExclamationIco" Value="$(var.ResourceDir)\Installer_Icon_32x32.ico" />
+
         <Property Id="ARPPRODUCTICON" Value="MongoDBIcon" />
         <Property Id="ARPHELPLINK" Value="http://www.mongodb.com/" />
         <Property Id="ARPURLINFOABOUT" Value="http://www.mongodb.com/" />
