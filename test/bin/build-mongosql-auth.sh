@@ -52,6 +52,8 @@
 
     echo "running cmake..."
     if [ -n "$CMAKE_GENERATOR" ]; then
+        # if there is a specific generator specified
+        # for this platform, then use it
         cmake .. $CMAKE_ARGS -G "$CMAKE_GENERATOR"
     else
         cmake .. $CMAKE_ARGS

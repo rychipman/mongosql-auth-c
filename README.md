@@ -10,12 +10,13 @@ Version 1.0 of this plugin supports the following mechanisms:
 
 The plugin is built and tested on the following platforms (all x86\_64):
 
-- Windows (VS2013)
+- Windows 2008 R2
 - OSX 10.12
 - Ubuntu 14.04
 - RHEL 7.0
 
-The plugin is built and tested against MySQL 5.7.18 Community Edition (64-bit).
+The plugin is built against MySQL 5.7.18 Community Edition (64-bit),
+and tested with MySQL 5.7.18 Community Edition and the MongoDB Connector for BI 2.2.
 
 ## Installation
 
@@ -23,7 +24,7 @@ The plugin tarball/installer can be downloaded from the [releases page](https://
 
 ### Windows
 
-First, ensure that MySQL 5.7.18 has been installed (installer [here](https://dev.mysql.com/downloads/file/?id=470091)).
+First, download the MySQL 5.7.18 [installer](https://dev.mysql.com/downloads/file/?id=470091) and install the products you need.
 Then, install the plugin using the msi installer provided on the releases page.
 
 ### OSX and Linux

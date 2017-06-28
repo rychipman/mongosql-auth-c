@@ -3,7 +3,7 @@
   <Fragment>
     <FeatureGroup Id="fg_All">
       <Feature Id="MongoSQLAuth"
-               Title="MongoSQL Auth"
+               Title="MongoSQL Authentication Plugin"
                Description="A MySQL client authentication plugin for use with the MongoDB Connector for BI"
                Level="1">
 
@@ -17,7 +17,7 @@
 
         <Feature Id="Plugin"
                 Title="Plugin Files"
-                Description="MongoSQL Auth Plugin"
+                Description="MongoSQL Authentication Plugin"
                 Level="1"
                 ConfigurableDirectory="MYSQLHOMEDIR">
           <Feature Id="Library"
@@ -28,7 +28,7 @@
           </Feature>
           <Feature Id="Config"
                   Title="MySQL Configuration"
-                  Description="MySQL configuration file to make mongosql_auth the default MySQL auth plugin"
+                  Description="MySQL configuration file to make mongosql_auth the default MySQL authentication plugin"
                   Level="1">
             <ComponentRef Id="c_mysql_config" />
           </Feature>

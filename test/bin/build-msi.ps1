@@ -29,6 +29,8 @@ if (-not ($VersionLabel -match "(\d\.\d).*")) {
 }
 $version = $matches[1]
 
+# unlike the BI Connector itself, only one version of the plugin can be
+# installed at a time.
 $upgradeCode = "3f021824-c333-49f5-9cbf-d6de9b6adacc"
 
 # compile wxs into .wixobjs
