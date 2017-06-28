@@ -36,7 +36,6 @@
         <Property Id="ARPPRODUCTICON" Value="MongoDBIcon" />
         <Property Id="ARPHELPLINK" Value="http://www.mongodb.com/" />
         <Property Id="ARPURLINFOABOUT" Value="http://www.mongodb.com/" />
-        <Property Id="WIXUI_INSTALLDIR" Value="AUTHPLUGINDIR" />
 
         <UIRef Id="MongoWixUI" />
 
