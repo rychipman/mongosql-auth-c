@@ -26,7 +26,7 @@
       <Component Id="c_example_dsn" Guid="16997a3a-cb44-4a55-b4aa-a1b41e156144">
         <File Id="f_example_dsn"
               Name="mongosql-auth-example.dsn"
-              Source="$(var.SourceDir)\mongosql-auth.dsn"
+              Source="$(var.ResourceDir)\mongosql-auth.dsn"
               DiskId ="1"
               KeyPath="yes" />
       </Component>
