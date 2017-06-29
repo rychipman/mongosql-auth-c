@@ -17,7 +17,7 @@
             <Directory Id="ProgramFiles64Folder">
                 <Directory Id="MongoDB" Name="MongoDB">
                     <Directory Id="BIConnector" Name="Connector for BI">
-                        <Directory Id="AUTHPLUGINDIR" Name="MongoSQL Auth Plugin" />
+                        <Directory Id="AUTHPLUGINDIR" Name="MongoSQL Authentication Plugin" />
                     </Directory>
                 </Directory>
                 <Directory Id="MySQL" Name="MySQL">

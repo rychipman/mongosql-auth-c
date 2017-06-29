@@ -1,4 +1,4 @@
-# this is an example dsn that illustrates the configuration options
+# this is an example DSN that illustrates the configuration options
 # needed to get a DSN working with the mongosql_auth plugin
 [ODBC]
 DRIVER=MySQL ODBC 5.3 ANSI Driver
