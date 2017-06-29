@@ -38,6 +38,16 @@
     cat $PROJECT_DIR/test/unit/CMakeLists.txt >> CMakeLists.txt
     echo "done moving test source into mysql repo"
 
+    # setting mysql repo version to mongosql_auth plugin version
+    echo "setting mysql repo version to mongosql_auth plugin version..."
+    cat > VERSION <<EOF
+MYSQL_VERSION_MAJOR=$MAJOR_VERSION
+MYSQL_VERSION_MINOR=$MINOR_VERSION
+MYSQL_VERSION_PATCH=$PATCH_VERSION
+MYSQL_VERSION_EXTRA=
+EOF
+    echo "done setting mysql repo version to mongosql_auth plugin version"
+
     # clean the build directory if CLOBBER is true
     if [ "$CLOBBER" = "true" ]; then
         echo "clobbering build directory..."
