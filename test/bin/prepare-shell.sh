@@ -62,6 +62,8 @@ else
     fi
 fi
 
+CURRENT_VERSION="$(git describe --always)"
+
 print_exit_msg() {
     exit_code=$?
     if [ "$exit_code" != "0" ]; then

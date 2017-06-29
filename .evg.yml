@@ -84,18 +84,23 @@ functions:
               set -o igncr
           fi
 
-          export VARIANT="${variant|other}"
+          VARIANT="${variant|other}"
 
-          export PROJECT_DIR="$(pwd)"
+          PROJECT_DIR="$(pwd)"
+          SCRIPT_DIR="$PROJECT_DIR/test/bin"
           if [ "Windows_NT" = "$OS" ]; then
-             export PROJECT_DIR="$(cygpath -m $PROJECT_DIR)"
+              PROJECT_DIR="$(cygpath -m $PROJECT_DIR)"
+              SCRIPT_DIR="$(cygpath -m $SCRIPT_DIR)"
           fi
 
-          export SCRIPT_DIR="$PROJECT_DIR/test/bin"
+          . "$SCRIPT_DIR/prepare-shell.sh"
 
           # create expansions from values calculated above
           cat <<EOT > $PROJECT_DIR/expansions.yml
           SCRIPT_DIR: "$SCRIPT_DIR"
+          CURRENT_VERSION: "$CURRENT_VERSION"
+          PUSH_NAME: "$PUSH_NAME"
+          PUSH_ARCH: "$PUSH_ARCH"
           PREPARE_SHELL: |
              if [ "Windows_NT" = "$OS" ]; then
                  set -o igncr
@@ -191,7 +196,7 @@ functions:
         aws_key: ${aws_key}
         aws_secret: ${aws_secret}
         local_file: mongosql-auth-c/test/artifacts/release.tgz
-        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth.tgz
+        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth-${PUSH_NAME}-${PUSH_ARCH}-${CURRENT_VERSION}.tgz
         content_type: application/x-gzip
         bucket: mciuploads
         permissions: public-read
@@ -202,7 +207,7 @@ functions:
         aws_key: ${aws_key}
         aws_secret: ${aws_secret}
         local_file: mongosql-auth-c/test/artifacts/release.zip
-        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth.zip
+        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth-${PUSH_NAME}-${PUSH_ARCH}-${CURRENT_VERSION}.zip
         content_type: application/x-gzip
         bucket: mciuploads
         permissions: public-read
@@ -213,7 +218,7 @@ functions:
         aws_key: ${aws_key}
         aws_secret: ${aws_secret}
         local_file: mongosql-auth-c/test/artifacts/release.msi
-        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth.msi
+        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth-${PUSH_NAME}-${PUSH_ARCH}-${CURRENT_VERSION}.msi
         content_type: application/x-msi
         bucket: mciuploads
         permissions: public-read
