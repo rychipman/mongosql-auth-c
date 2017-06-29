@@ -86,14 +86,16 @@ functions:
 
           VARIANT="${variant|other}"
 
-          PROJECT_DIR="$(pwd)"
-          SCRIPT_DIR="$PROJECT_DIR/test/bin"
+          export PROJECT_DIR="$(pwd)"
+          export SCRIPT_DIR="$PROJECT_DIR/test/bin"
           if [ "Windows_NT" = "$OS" ]; then
-              PROJECT_DIR="$(cygpath -m $PROJECT_DIR)"
-              SCRIPT_DIR="$(cygpath -m $SCRIPT_DIR)"
+              export PROJECT_DIR="$(cygpath -m $PROJECT_DIR)"
+              export SCRIPT_DIR="$(cygpath -m $SCRIPT_DIR)"
           fi
 
-          . "$SCRIPT_DIR/prepare-shell.sh"
+          CURRENT_VERSION="$(git describe --always)"
+
+          . "$SCRIPT_DIR/platforms.sh"
 
           # create expansions from values calculated above
           cat <<EOT > $PROJECT_DIR/expansions.yml
