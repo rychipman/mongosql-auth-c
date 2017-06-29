@@ -55,7 +55,7 @@ $upgradeCode = "3f021824-c333-49f5-9cbf-d6de9b6adacc"
     "$resourceDir\Product.wxs" `
     "$resourceDir\FeatureFragment.wxs" `
     "$resourceDir\LibraryFragment.wxs" `
-    "$resourceDir\LicensingFragment.wxs" `
+    "$resourceDir\DocumentationFragment.wxs" `
     "$resourceDir\ConfigFragment.wxs" `
     "$resourceDir\UIFragment.wxs"
 
@@ -71,6 +71,6 @@ if(-not $?) {
     $objDir\Product.wixobj `
     $objDir\FeatureFragment.wixobj `
     $objDir\LibraryFragment.wixobj `
-    $objDir\LicensingFragment.wixobj `
+    $objDir\DocumentationFragment.wixobj `
     $objDir\ConfigFragment.wixobj `
     $objDir\UIFragment.wixobj

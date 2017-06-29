@@ -32,7 +32,7 @@
       </Component>
     </DirectoryRef>
 
-    <ComponentGroup Id="cg_License">
+    <ComponentGroup Id="cg_Documentation">
       <ComponentRef Id="c_Thirdparty"/>
       <ComponentRef Id="c_Readme"/>
       <ComponentRef Id="c_License"/>

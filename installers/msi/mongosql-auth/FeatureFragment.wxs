@@ -9,10 +9,10 @@
 
         <Feature Id="Documentation"
                  Title="Documentation"
-                 Description="README, LICENSE, and THIRD-PARTY-NOTICES for the MongoSQL Auth Plugin"
+                 Description="README, LICENSE, THIRD-PARTY-NOTICES, and example DSN for the MongoSQL Auth Plugin"
                  Level="1"
                  ConfigurableDirectory="AUTHPLUGINDIR">
-          <ComponentGroupRef Id="cg_License" />
+          <ComponentGroupRef Id="cg_Documentation" />
         </Feature>
 
         <Feature Id="Plugin"
