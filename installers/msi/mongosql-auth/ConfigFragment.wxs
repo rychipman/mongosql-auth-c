@@ -7,7 +7,8 @@
               Name="my.cnf"
               Source="$(var.ResourceDir)\my.cnf"
               DiskId ="1"
-              KeyPath="yes"/>
+              KeyPath="yes"
+              NeverOverwrite="yes"/>
       </Component>
     </DirectoryRef>
   </Fragment>
