@@ -30,6 +30,7 @@
     echo "moving plugin source into mysql repo..."
     cp -r $PROJECT_DIR/src/mongosql-auth plugin/auth/
     cat $PROJECT_DIR/src/CMakeLists.txt >> CMakeLists.txt
+    cat $PROJECT_DIR/src/versioninfo.rc.in > cmake/versioninfo.rc.in
     echo "done moving plugin source into mysql repo"
 
     # move testing source and build files into mysql repo
