@@ -30,6 +30,14 @@ tasks:
     - func: "create packages"
     - func: "upload packages"
 
+- name: sign
+  depends_on:
+    - name: dist
+  commands:
+    - func: "fetch packages"
+    - func: "sign msi installer"
+    - func: "upload release packages"
+
 - name: unit_tests
   exec_timeout_secs: 14400 # 4h
   commands:
@@ -100,6 +108,7 @@ functions:
 
           # create expansions from values calculated above
           cat <<EOT > $PROJECT_DIR/expansions.yml
+          PROJECT_DIR: "$PROJECT_DIR"
           SCRIPT_DIR: "$SCRIPT_DIR"
           CURRENT_VERSION: "$CURRENT_VERSION"
           PUSH_NAME: "$PUSH_NAME"
@@ -181,6 +190,24 @@ functions:
         script: |
           ${PREPARE_SHELL}
           ${SCRIPT_DIR}/run-unit-tests.sh
+
+  "sign msi installer":
+    - command: shell.exec
+      params:
+        silent: true
+        script: |
+          echo "${signing_token_bi_connector}" > ${PROJECT_DIR}/signing_auth_token
+    - command: shell.exec
+      params:
+        working_dir: src/github.com/10gen/sqlproxy/testdata/artifacts
+        script: |
+          /usr/local/bin/notary-client.py \
+              --key-name "bi-connector" \
+              --auth-token-file ${PROJECT_DIR}/signing_auth_token \
+              --comment "Evergreen Automatic Signing (mongosql-auth-c) - ${version_id} - ${build_variant}" \
+              --notary-url http://notary-service.build.10gen.cc:5000 \
+              --skip-missing \
+              release.msi
 
   "start mongo-orchestration":
     - command: shell.exec
@@ -401,7 +428,7 @@ functions:
         optional: true
         aws_key: ${aws_key}
         aws_secret: ${aws_secret}
-        local_file: mongosql-auth-c/test/artifacts/release.msi
+        local_file: mongosql-auth-c/test/artifacts/release-signed.msi
         remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth-${PUSH_NAME}-${PUSH_ARCH}-${CURRENT_VERSION}.msi
         content_type: application/x-gzip
         bucket: mciuploads
