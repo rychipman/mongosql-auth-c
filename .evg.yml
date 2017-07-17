@@ -273,6 +273,17 @@ functions:
         optional: true
         aws_key: ${aws_key}
         aws_secret: ${aws_secret}
+        local_file: mongosql-auth-c/test/artifacts/release-signed.msi
+        remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth-${PUSH_NAME}-${PUSH_ARCH}-${CURRENT_VERSION}.msi
+        content_type: application/x-msi
+        bucket: mciuploads
+        permissions: public-read
+        display_name: "mongosql-auth-signed.msi"
+    - command: s3.put
+      params:
+        optional: true
+        aws_key: ${aws_key}
+        aws_secret: ${aws_secret}
         local_file: mongosql-auth-c/test/artifacts/build/mongosql_auth.so
         remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql_auth.so
         content_type: application/octet-stream
@@ -436,7 +447,7 @@ functions:
         aws_secret: ${aws_secret}
         local_file: mongosql-auth-c/test/artifacts/release-signed.msi
         remote_file: mongosql-auth-c/artifacts/${build_variant}/${task_id}/mongosql-auth-${PUSH_NAME}-${PUSH_ARCH}-${CURRENT_VERSION}.msi
-        content_type: application/x-gzip
+        content_type: application/x-msi
         bucket: mciuploads
         permissions: public-read
         display_name: mongosql-auth-${PUSH_NAME}-${PUSH_ARCH}-${CURRENT_VERSION}.msi
