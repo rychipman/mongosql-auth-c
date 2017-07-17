@@ -1,6 +1,4 @@
 
-. "$(dirname $0)/platforms.sh"
-
 MAJOR_VERSION=1
 MINOR_VERSION=0
 PATCH_VERSION=0
@@ -48,7 +46,7 @@ export AUTH=auth
 MONGODB_BINARIES="$ARTIFACTS_DIR/mongodb/bin"
 export PATH="$MONGODB_BINARIES:$PATH"
 
-if [ "$RELEASE" == "" ]; then
+if [ "$RELEASE" = "" ]; then
     CMAKE_ARGS="$CMAKE_ARGS -DMONGOSQL_AUTH_DEBUG=1"
     CMAKE_ARGS="$CMAKE_ARGS -DMONGOC_DEBUG=1"
 else

@@ -1,4 +1,8 @@
 
+# set defaults
+ARCHIVE_FORMAT=tgz
+LIBRARY_FORMAT=dll
+
 case $VARIANT in
 ubuntu1404-64)
     export CC='/opt/mongodbtoolchain/v2/bin/clang'
@@ -27,6 +31,8 @@ windows-vs2013)
     MSBUILD_PATH="/cygdrive/c/Program Files (x86)/MSBuild/12.0/Bin"
     PUSH_ARCH='x86_64'
     PUSH_NAME='win32'
+    ARCHIVE_FORMAT=tgz
+    LIBRARY_FORMAT=dll
     ;;
 other) # on evergreen, but "variant" expansion not set
     ;;
