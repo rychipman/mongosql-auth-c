@@ -4,7 +4,13 @@ buildvariants:
 
 - matrix_name: full_matrix
   display_name: "${os}"
-  tasks: ["*"]
+  tasks:
+    - name: dist
+    - name: sign
+      run_on: linux-64-amzn-build
+    - name: unit_tests
+    - name: integration_tests_plain
+    - name: integration_tests_scram
   matrix_spec:
     os: "*"
 
@@ -199,7 +205,7 @@ functions:
           echo "${signing_token_bi_connector}" > ${PROJECT_DIR}/signing_auth_token
     - command: shell.exec
       params:
-        working_dir: src/github.com/10gen/sqlproxy/testdata/artifacts
+        working_dir: mongosql-auth-c/test/artifacts
         script: |
           /usr/local/bin/notary-client.py \
               --key-name "bi-connector" \
