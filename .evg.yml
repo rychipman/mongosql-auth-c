@@ -27,7 +27,7 @@ tasks:
     - func: "build mongosql_auth"
       vars:
         release: true
-    - func: "create release"
+    - func: "create packages"
 
 - name: unit_tests
   exec_timeout_secs: 14400 # 4h
@@ -66,13 +66,13 @@ functions:
           export RELEASE='${release}'
           ${SCRIPT_DIR}/build-mongosql-auth.sh
 
-  "create release":
+  "create packages":
     command: shell.exec
     type: test
     params:
       script: |
           ${PREPARE_SHELL}
-          ${SCRIPT_DIR}/create-release.sh
+          ${SCRIPT_DIR}/create-packages.sh
 
   "export variables":
     - command: shell.exec
