@@ -25,6 +25,7 @@ windows-vs2013)
     CMAKE_PATH='/cygdrive/c/cmake/bin'
     CMAKE_GENERATOR='Visual Studio 12 2013 Win64'
     MSBUILD_PATH='/cygdrive/c/Program Files (x86)/MSBuild/12.0/Bin'
+    PROGRAM_FILES_FOLDER='ProgramFiles64Folder'
     PUSH_ARCH='x86_64'
     PUSH_NAME='win32'
     ;;
@@ -33,6 +34,7 @@ windows-32)
     CMAKE_PATH='/cygdrive/c/cmake/bin'
     CMAKE_GENERATOR='Visual Studio 12 2013'
     MSBUILD_PATH='/cygdrive/c/Program Files (x86)/MSBuild/12.0/Bin'
+    PROGRAM_FILES_FOLDER='ProgramFilesFolder'
     PUSH_ARCH='x86_64'
     PUSH_NAME='win32'
     ;;
