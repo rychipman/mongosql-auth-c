@@ -277,6 +277,7 @@ int mongosql_auth_sspi_client_negotiate(
     );
 
     if (client->status != SEC_E_OK && client->status != SEC_I_CONTINUE_NEEDED) {
+        MONGOSQL_AUTH_LOG("      Error initiating SSPI sec ctx (%x)", client->status);
         return SSPI_ERROR;
     }
 
