@@ -261,6 +261,7 @@ int mongosql_auth_sspi_client_negotiate(
     ULONG context_attr = 0;
 
     MONGOSQL_AUTH_LOG("%s","      Initiating SSPI security context");
+    MONGOSQL_AUTH_LOG("        target spn: %s", client->spn);
     client->status = sspi_functions->InitializeSecurityContext(
         &client->cred,                             // credentials handle
         client->has_ctx > 0 ? &client->ctx : NULL, // CtxtHandle
