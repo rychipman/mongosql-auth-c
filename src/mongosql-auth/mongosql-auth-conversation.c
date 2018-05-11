@@ -65,9 +65,9 @@ _mongosql_auth_conversation_init(mongosql_auth_conversation_t *conv,
     } else if (strcmp(conv->mechanism_name, "GSSAPI") == 0) {
         // Default the service name if none provided.
         if (service_name == NULL) {
-            target_spn = bson_strdup_printf("%s@%s", MONGOSQL_DEFAULT_SERVICE_NAME, host);
+            target_spn = bson_strdup_printf("%s/%s", MONGOSQL_DEFAULT_SERVICE_NAME, host);
         } else {
-            target_spn = bson_strdup_printf("%s@%s", service_name, host);
+            target_spn = bson_strdup_printf("%s/%s", service_name, host);
             free (service_name);
         }
         // Initialize the SASL struct.
