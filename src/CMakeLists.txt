@@ -1,7 +1,7 @@
 # Defaults.
 set (MONGOC_DEBUG 0)
 set (MONGOC_ENABLE_ICU 0)
-set (ENABLE_ICU OFF)
+set (ENABLE_ICU ON)
 
 include(FindICU)
 if (ICU_FOUND)
@@ -11,9 +11,6 @@ if (ICU_FOUND)
   include_directories ("${ICU_INCLUDE_DIR}")
 elseif (ENABLE_ICU STREQUAL ON)
   message (FATAL_ERROR "No ICU library found. If ICU is installed in a non-standard directory, define ICU_ROOT as the ICU installation path.")
-elseif (ENABLE_ICU STREQUAL AUTO)
-  message (STATUS "No ICU library found, SASLPrep disabled for SCRAM-SHA-256 authentication.")
-  message (STATUS "If ICU is installed in a non-standard directory, define ICU_ROOT as the ICU installation path.")
 endif()
 
 
@@ -47,8 +44,8 @@ ELSE()
     set(PLUGIN_SOURCE_FILES ${PLUGIN_SOURCE_FILES} ${PROJECT_SOURCE_DIR}/plugin/auth/mongosql-auth/mongosql-auth-gssapi.c)
 ENDIF()
 
-if (NOT ENABLE_ICU MATCHES "AUTO|ON|OFF")
-   message (FATAL_ERROR, "ENABLE_ICU option must be AUTO, ON, or OFF")
+if (NOT ENABLE_ICU MATCHES "ON|OFF")
+   message (FATAL_ERROR, "ENABLE_ICU option must be ON or OFF")
 endif()
 
 configure_file (
