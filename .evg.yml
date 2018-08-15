@@ -245,7 +245,7 @@ functions:
           export PASSWORD=pwd123
           if test "${var_auth_mechanism}" = "SCRAM-SHA-256"; then
             export USERNAME=bob256
-            export PASSWORD=pwd256
+            export PASSWORD=pwd↔256
             export MECHANISM="${var_auth_mechanism}"
             export MONGO_CLIENT_ARGS="-u bob -p pwd123 --authenticationDatabase admin"
             export MONGO_OTHER_USER_ROLES="[{role: 'root', db: 'admin'}]"
