@@ -3,7 +3,7 @@ set (MONGOC_DEBUG 0)
 set (MONGOC_ENABLE_ICU 0)
 set (ENABLE_ICU ON)
 
-include(FindICU)
+find_package(ICU COMPONENTS uc)
 if (ICU_FOUND)
   message (STATUS "ICU was found, version is ${ICU_VERSION}")
   message (STATUS "Using ICU libraries from: ${ICU_LIBRARIES} with include dirs: ${ICU_INCLUDE_DIR}")
