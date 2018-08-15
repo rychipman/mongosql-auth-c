@@ -1,7 +1,6 @@
 # Defaults.
 set (MONGOC_DEBUG 0)
 set (MONGOC_ENABLE_ICU 0)
-set (ENABLE_ICU ON)
 
 find_package(ICU COMPONENTS uc)
 if (ICU_FOUND)
