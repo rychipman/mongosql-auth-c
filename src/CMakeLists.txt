@@ -100,3 +100,5 @@ MYSQL_ADD_PLUGIN(
     MODULE_ONLY
     MODULE_OUTPUT_NAME mongosql_auth
 )
+
+set_target_properties(mongosql_auth_so PROPERTIES COMPILE_FLAGS "-DU_STATIC_IMPLEMENTATION")
